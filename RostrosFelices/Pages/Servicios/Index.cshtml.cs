@@ -7,6 +7,7 @@ using RostrosFelices.Models;
 
 namespace RostrosFelices.Pages.Servicios
 {
+    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly SumpermarketContext _context;

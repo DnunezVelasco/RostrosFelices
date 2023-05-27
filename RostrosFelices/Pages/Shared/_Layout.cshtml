@@ -11,7 +11,18 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+
 <body>
+    <style>
+        .custom-font a {
+            text-decoration: none; /* Quitar subrayado */
+            color: white; /* Color de texto */
+        }
+
+        .move-right {
+            float: right;
+        }
+    </style>
     <header>
         <div class="pos-f-t">
             <div class="collapse" id="navbarToggleExternalContent">
@@ -56,11 +67,11 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </nav>
-
+            <div class="mr-2 move-right">
+                <partial name="_LoginStatusPartial" />
+            </div>
         </div>
-        <div class="mr-2">
-            <partial name="_LoginStatusPartial" />
-        </div>
+        
 
 
 
