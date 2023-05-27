@@ -4,7 +4,70 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<html>
+<head>
+    <title>Rostros Felices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .display-4 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .lead {
+            font-size: 1.2rem;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        hr {
+            border-color: #ccc;
+            margin: 40px auto;
+            max-width: 200px;
+        }
+
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .image-container {
+            margin-top: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+            .image-container img {
+                max-width: 100%;
+                height: auto;
+            }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="display-4">¡Bienvenido a Rostros Felices!</h1>
+        <p class="lead">La plataforma para compartir sonrisas y alegría.</p>
+        <hr>
+        <p>En Rostros Felices, nos dedicamos a propagar la felicidad a través de hermosas sonrisas. ¡Únete a nuestra comunidad y comparte tus momentos de alegría con personas de todo el mundo!</p>
+        <p>Explora nuestras colecciones de sonrisas, descubre historias inspiradoras y conecta con personas que comparten tu pasión por la felicidad.</p>
+
+        <div class="image-container">
+            <img src="~/css/Imagen2.png" alt="Imagen de ejemplo">
+        </div>
+    </div>
+</body>
+</html>
