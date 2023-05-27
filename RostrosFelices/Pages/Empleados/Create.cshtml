@@ -1,0 +1,54 @@
+﻿@page
+@model RostrosFelices.Pages.Empleados.CreateModel
+@{
+}
+<h4>Providers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Empleado.NombreEmpleado" class="control-label"></label>
+                <input asp-for="Empleado.NombreEmpleado" class="form-control" />
+
+                <span asp-validation-for="Empleado.NombreEmpleado" class="text-danger"></span>
+
+            </div>
+            <div cite="form-grup">
+                <label asp-for="Empleado.Apellidos" class="control-label"></label>
+                <input asp-for="Empleado.Apellidos" class="form-control" />
+
+                <label asp-for="Empleado.Documento" class="control-label"></label>
+                <input asp-for="Empleado.Documento" class="form-control" />
+
+                <label asp-for="Empleado.Cargo" class="control-label"></label>
+                <input asp-for="Empleado.Cargo" class="form-control" />
+
+
+
+
+                <span asp-validation-for="Empleado. Apellidos" class="text-danger"></span>
+
+                <span asp-validation-for="Empleado. Documento" class="text-danger"></span>
+
+                <span asp-validation-for="Empleado. Cargo" class="text-danger"></span>
+
+             
+
+
+            </div>
+            <div class="form-grup mt-3 ">
+                <input type="submit" value="Create" class="btn btn-success" />
+                <a asp-page="Index" class="btn btn-primary">Back to list </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+@section Scripts{
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
