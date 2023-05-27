@@ -2,27 +2,17 @@
 @model RostrosFelices.Pages.Empleados.IndexModel
 @{
 }
-<h1>BIENVENIDO A ROSTROS FELICES </h1>
+<h1>BIENVENIDO A ROSTROS FELICES</h1>
 <p>
     <a asp-page="Create" class="btn btn-success">REGISTRESE AQUI</a>
 </p>
-<table class="table">
+<table class="table table-striped">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model=>model.Empleados[0].NombreEmpleado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model=>model.Empleados[0].Apellidos)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model=>model.Empleados[0].Documento)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model=>model.Empleados[0].Cargo)
-            </th>
-            
-
+            <th>@Html.DisplayNameFor(model => model.Empleados[0].NombreEmpleado)</th>
+            <th>@Html.DisplayNameFor(model => model.Empleados[0].Apellidos)</th>
+            <th>@Html.DisplayNameFor(model => model.Empleados[0].Documento)</th>
+            <th>@Html.DisplayNameFor(model => model.Empleados[0].Cargo)</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -30,24 +20,18 @@
         @foreach (var item in Model.Empleados)
         {
             <tr>
+                <td>@Html.DisplayFor(modelItem => item.NombreEmpleado)</td>
+                <td>@Html.DisplayFor(modelItem => item.Apellidos)</td>
+                <td>@Html.DisplayFor(modelItem => item.Documento)</td>
+                <td>@Html.DisplayFor(modelItem => item.Cargo)</td>
                 <td>
-                    @Html.DisplayFor(modelItem=>item.NombreEmpleado)
+                    <span><!-- Actions --></span>
                 </td>
-                <td>
-                    @Html.DisplayFor(modelItem=>item.Apellidos)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem=>item.Documento)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem=>item.Cargo)
-                </td>
-               
 
-               
                 <td>
-                    <span></span>
-                </td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                        <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                    </td>
             </tr>
         }
     </tbody>
