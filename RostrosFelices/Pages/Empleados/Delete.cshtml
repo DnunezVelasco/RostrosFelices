@@ -1,5 +1,5 @@
 ﻿@page
-@model RostrosFelices.Pages.Clientes.DeleteModel
+@model RostrosFelices.Pages.Empleados.DeleteModel
 @{
 }
 <h1>ELIMINE SU REGISTRO</h1>
@@ -10,21 +10,21 @@
     <hr />
     <dl class="row">
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente.NombreCliente)
+            @Html.DisplayNameFor(model => model.Empleado.NombreEmpleado)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.Apellidos)
+            @Html.DisplayFor(model => model.Empleado.Apellidos)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Cliente.Documento)
+            @Html.DisplayNameFor(model => model.Empleado.Documento)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Cliente.Numero)
+            @Html.DisplayFor(model => model.Empleado.Cargo)
         </dd>
-       
+
     </dl>
     <form method="post">
-        <input type="hidden" asp-for="Cliente.Id" />
+        <input type="hidden" asp-for="Empleado.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" />
         <a asp-page="./Index" class="btn btn-primary">Back to list</a>
     </form>
