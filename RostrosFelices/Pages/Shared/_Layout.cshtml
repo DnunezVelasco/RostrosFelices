@@ -7,28 +7,74 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/RostrosFelices.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">RostrosFelices</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
-                        </li>
-                    </ul>
+        <div class="pos-f-t">
+            <div class="collapse" id="navbarToggleExternalContent">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-2 bg-dark" style="position: fixed; top: 0; left: 0; height: 100vh;">
+                            <ul class="list-unstyled">
+                                <li class="p-4">
+                                    <a class="text-white" asp-area="" asp-page=""></a>
+                                </li>
+                                <li class="p-4">
+                                    <a class="text-white" asp-area="" asp-page="/Index">Home</a>
+                                </li>
+                                <li class="p-4">
+                                    <a class="text-white" asp-area="" asp-page="/Clientes/Index">Clientes</a>
+                                </li>
+                                <li class="p-4">
+                                    <a class="text-white" asp-area="" asp-page="/Empleados/Index">Empleados</a>
+                                </li>
+                                <li class="p-4">
+                                    <a class="text-white" asp-area="" asp-page="/Servicios/Index">Servicios</a>
+                                </li>
+                                <li class="p-4">
+                                    <a class="text-white" asp-area="" asp-page="/Privacy">Privacy</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="col-md-10 offset-md-2" style="padding-left: 10px; padding-right: 10px;">
+                        </div>
+                    </div>
+
                 </div>
             </div>
-        </nav>
+
+
+            <nav class="navbar navbar-dark bg-dark">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+
+        </div>
+        <div class="mr-2">
+            <partial name="_LoginStatusPartial" />
+        </div>
+
+
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var navbarToggle = document.getElementById('navbarToggle');
+                var navbar = document.getElementById('navbar');
+
+                navbarToggle.addEventListener('click', function () {
+                    navbar.classList.toggle('col-md-2');
+                });
+            });
+
+        </script>
+
+
+
     </header>
     <div class="container">
         <main role="main" class="pb-3">
