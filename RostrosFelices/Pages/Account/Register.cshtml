@@ -2,14 +2,11 @@
 @model RostrosFelices.Pages.Account.RegisterModel
 @{
 }
-
-
-
-
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form method="post">
+            <h2 class="login-title">Register Account</h2>
             <div class="text-danger" asp-validation-summary="ModelOnly"></div>
             <div class="form-group">
                 <label for="inputEmail" class="control-label">Email address</label>
@@ -20,6 +17,10 @@
                 <label for="inputPassword" class="control-label">Password</label>
                 <input type="password" class="form-control" asp-for="Registro.Password" id="inputPassword" required />
                 <span class="text-danger" asp-validation-for="Registro.Password"></span>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
             </div>
             <div class="form-group mt-3">
                 <input type="submit" value="Register" class="btn btn-success btn-block" />
