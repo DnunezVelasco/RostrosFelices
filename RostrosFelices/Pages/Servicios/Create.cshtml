@@ -1,0 +1,44 @@
+﻿@page
+@model RostrosFelices.Pages.Servicios.CreateModel
+@{
+}
+<h1>Create</h1>
+
+<h4>Category</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Servicio.NombreDelServicio" class="control-label"></label>
+                <input asp-for="Servicio.NombreDelServicio" class="form-control" />
+                <span asp-validation-for="Servicio.NombreDelServicio" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Servicio.ClienteId" class="control-label"></label>
+                <select asp-for="Servicio.ClienteId" class="form-control" asp-items="@(new SelectList(Model.CategoryLis, "Id", "NombreCliente"))"></select>
+                <span asp-validation-for="Servicio.ClienteId" class="text-danger"></span>
+            </div>
+               <div class="form-group">
+                <label asp-for="Servicio.EmpleadoId" class="control-label"></label>
+                <select asp-for="Servicio.EmpleadoId" class="form-control" asp-items="@(new SelectList(Model.CategoryList, "Id", "NombreEmpleado"))"></select>
+                <span asp-validation-for="Servicio.EmpleadoId" class="text-danger"></span>
+            </div>
+
+
+
+            <div class="form-group mt-3">
+                <button type="submit" class="btn btn-success" asp-route-handler="create">Create</button>
+                <a asp-page="Index" class="btn btn-primary">Back to List</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

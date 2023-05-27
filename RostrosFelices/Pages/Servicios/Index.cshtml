@@ -1,0 +1,51 @@
+﻿@page
+@model RostrosFelices.Pages.Servicios.IndexModel
+@{
+}
+<h1>Index Products</h1>
+<p>
+    <a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Servicios[0].NombreDelServicio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Servicios[0].Cliente.NombreCliente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Servicios[0].Empleado.NombreEmpleado)
+            </th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Servicios)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NombreDelServicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cliente.NombreCliente)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Empleado.NombreEmpleado)
+                </td>
+       
+       
+
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                    <a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                </td>
+
+
+
+
+            </tr>
+        }
+    </tbody>
+</table>
