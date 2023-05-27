@@ -1,0 +1,30 @@
+﻿@page
+@model RostrosFelices.Pages.Account.LoginModel
+@{
+}
+<div class="row">
+    <div class="col-md-4 login-container">
+        <form method="post" class="login-form">
+            <h2 class="login-title">Sign In</h2>
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+            <div class="form-group">
+                <label for="exampleInputEmail" class="form-label">Email address</label>
+                <input type="email" class="form-control" asp-for="User.Email" id="exampleInputEmail" aria-describedby="emailHelp" required />
+                <span class="text-danger" asp-validation-for="User.Email"></span>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control" asp-for="User.Password" id="exampleInputPassword1" required />
+                <span class="text-danger" asp-validation-for="User.Password"></span>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+                <label class="form-check-label" for="exampleCheck1">Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+            <div class="form-group text-center">
+                <small>Don't have an account? <a href="#">Sign up</a></small>
+            </div>
+        </form>
+    </div>
+</div>
