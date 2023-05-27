@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using RostrosFelices.Data;
+
 namespace RostrosFelices
 {
     public class Program
@@ -6,12 +9,24 @@ namespace RostrosFelices
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
+
             builder.Services.AddRazorPages();
+
+            builder.Services.AddDbContext<SumpermarketContext>(options =>
+          options.UseSqlServer(builder.Configuration.GetConnectionString("RostrosFelices")
+          ));
+
+
+            builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+            {
+                options.Cookie.Name = "MyCookieAuth";
+                options.LoginPath = "/Account/Register";
+            });
+
 
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
+
             if (!app.Environment.IsDevelopment())
             {
                 app.UseExceptionHandler("/Error");
