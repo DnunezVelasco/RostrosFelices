@@ -2,9 +2,9 @@
 @model RostrosFelices.Pages.Empleados.DeleteModel
 @{
 }
-<h1>ELIMINE SU REGISTRO</h1>
+<h1>Delete</h1>
 
-
+<h3>Are you sure you want to delete this?</h3>
 <div>
     <h4>Category</h4>
     <hr />
@@ -13,10 +13,24 @@
             @Html.DisplayNameFor(model => model.Empleado.NombreEmpleado)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Empleado.Apellidos)
+            @Html.DisplayFor(model => model.Empleado.NombreEmpleado)
         </dd>
         <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Empleado.Apellidos)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Empleado.Apellidos)
+        </dd>
+
+        <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.Empleado.Documento)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Empleado.Documento)
+        </dd>
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Empleado.Cargo)
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Empleado.Cargo)
