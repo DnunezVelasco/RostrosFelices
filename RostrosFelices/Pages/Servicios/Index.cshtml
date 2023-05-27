@@ -13,6 +13,9 @@
                 @Html.DisplayNameFor(model => model.Servicios[0].NombreDelServicio)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Servicios[0].Fecha)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Servicios[0].Cliente.NombreCliente)
             </th>
             <th>
@@ -27,6 +30,9 @@
             <tr>
                 <td>
                     @Html.DisplayFor(modelItem => item.NombreDelServicio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Cliente.NombreCliente)
